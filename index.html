@@ -1,55 +1,68 @@
- <!DOCTYPE html>
+<!-- 파일명: index.html -->
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>D'Alba A/B Test</title>
+<title>d'Alba A/B Test</title>
 
 <style>
 body {
-  font-family: 'Arial';
   margin: 0;
-  background: #f4f6f8;
+  font-family: 'Arial';
+  background: #f7f7f7;
 }
 
+/* 헤더 */
 header {
-  background: #111;
-  color: white;
-  padding: 40px;
+  background: #f4c542; /* d'Alba 느낌 노랑 */
   text-align: center;
+  padding: 40px 20px;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* 컨테이너 */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-.section {
-  background: white;
-  padding: 25px;
-  margin-top: 20px;
-  border-radius: 12px;
-}
-
+/* A/B 박스 */
 .ab-box {
   display: flex;
   gap: 20px;
 }
 
+/* 카드 */
 .card {
   flex: 1;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
+/* 이미지 */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* 버튼 */
 button {
-  margin-top: 15px;
-  padding: 12px;
+  margin: 20px;
+  padding: 12px 20px;
   border: none;
-  background: black;
-  color: white;
+  background: #f4c542;
+  color: black;
+  font-weight: bold;
   cursor: pointer;
+  border-radius: 8px;
 }
 </style>
 
@@ -57,57 +70,32 @@ button {
 <body>
 
 <header>
-  <h1>D'Alba 미스트 A/B 테스트</h1>
-  <p>광고 메시지 효과 비교 연구</p>
+  <h1>내 피부에 딱 맞는 달바 미스트 찾기!</h1>
 </header>
 
 <div class="container">
 
-  <div class="section">
-    <h2>연구 개요</h2>
-    <p>
-      본 연구는 광고 메시지 유형(문제 제시형 vs 효과 강조형)이
-      소비자의 구매 전환에 미치는 영향을 분석하기 위해 설계되었다.
-    </p>
-  </div>
+  <div class="ab-box">
 
-  <div class="section ab-box">
-
+    <!-- A안 (문제 제시형) -->
     <div class="card">
-      <h3>문제 제시형</h3>
-      <p>
-        건조한 피부, 들뜬 메이크업…<br>
-        피부 고민을 느끼고 계신가요?<br><br>
-        d'Alba 미스트로 지금 해결하세요.
-      </p>
+      <img src="A.png" alt="문제 제시형">
       <button onclick="track('A')">지금 구매</button>
     </div>
 
+    <!-- B안 (효과 강조형) -->
     <div class="card">
-      <h3>효과 강조형</h3>
-      <p>
-        7일 사용 후 피부 변화 경험!<br>
-        촉촉함 + 광채 피부 완성<br><br>
-        지금 바로 확인하세요.
-      </p>
-      <button onclick="track('B')">지금 구매</button>
+      <img src="B.png" alt="효과 강조형">
+      <button onclick="track('B')">지금 확인</button>
     </div>
 
-  </div>
-
-  <div class="section">
-    <h2>실험 목적</h2>
-    <ul>
-      <li>문제 제시형 → 고객 유입 확대</li>
-      <li>효과 강조형 → 구매 전환 증가</li>
-    </ul>
   </div>
 
 </div>
 
 <script>
 function track(type) {
-  alert(type + " 광고 클릭");
+  alert(type + " 광고 클릭!");
   console.log("Clicked:", type);
 }
 </script>
